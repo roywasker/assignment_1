@@ -21,6 +21,7 @@ int Factorial(int num){
     return result;
 }
 
+
 int isStrong(int num){
     int x=num,sum=0;
     while (x>0)
@@ -32,11 +33,5 @@ int isStrong(int num){
     {
        return 1;
     }
-    return 0;
-}
-
-int main(){
-    int result =isPrime(37);
-    printf("%d",result);
     return 0;
 }
