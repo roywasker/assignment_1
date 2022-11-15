@@ -1,4 +1,4 @@
-all: libclassrec.so libclassloops.so libclassrec.a libclassloops.a loop loopd recursived recursives
+all: loop loopd recursived recursives mains maindrec maindloop
 
 mains: main.o libclassrec.a
 	gcc -wall -g -o mains main.o libclassrec.a -lm
@@ -37,4 +37,4 @@ advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
 .PHONY: clean all
 
 clean:
-	rm -f *.o *.a *.so
+	rm -f *.o *.a *.so mains maindrec maindloop
