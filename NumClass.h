@@ -1,3 +1,5 @@
+#ifndef _NUMCLASS_H_
+#define _NUMCLASS_H_
 
 /* will return if a number is Armstrong number
 An Armstrong number is an n-digit number that is equal to the sum of the nth powers of its digits.
@@ -24,4 +26,5 @@ return 1 if its true
 */
 int isStrong(int);
 
+#endif
 
