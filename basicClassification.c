@@ -23,11 +23,11 @@ int Factorial(int num){
 
 
 int isStrong(int num){
-    int x=num,sum=0;
-    while (x>0)
+    int temp=num,sum=0;
+    while (temp>0)
     {
-        sum+=Factorial(x%10);
-        x/=10;
+        sum+=Factorial(temp%10);
+        temp/=10;
     }
     if (num==sum)
     {

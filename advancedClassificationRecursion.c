@@ -1,10 +1,41 @@
 #include <stdio.h>
 #include "NumClass.h"
+#include <math.h>
 
-int isPalindrome(){
+
+int isPalindrome(int num){
+   if(num>=0&&num<=9){
+    return 1;
+   }else if (num%10==num/10&&num>=11&&num<=99)
+   {
+    return 1;
+   }else{
+    int numofdig=(int)log10(num);
+    int savefirstdig=num/pow(10,numofdig);
+    if (savefirstdig==num%10)
+    {
+        num=num%(int)pow(10,numofdig);
+        return isPalindrome(num/10);
+    }
+   }
+   return 0;
+}
+int isArmstrong(int num){
+    return cheackisArmstrong(num ,log10(num)+1);
+}
+int cheackisArmstrong(int num ,int numofdig){
+    int temp=pow(num%10,numofdig);
+    if (num-temp==0)
+    {
+        return 1;
+    }else if (num>0)
+    {
+
+    }
     return 0;
 }
 
-int isArmstrong(){
+int main(){
+    printf("%d\n",isArmstrong(407));
     return 0;
 }
