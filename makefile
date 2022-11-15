@@ -1,13 +1,13 @@
 all: loop loopd recursived recursives mains maindrec maindloop
 
 mains: main.o libclassrec.a
-	gcc -wall -g -o mains main.o libclassrec.a -lm
+	gcc -Wall -g -o mains main.o libclassrec.a -lm
 
 maindloop: main.o
-	gcc -wall -g -o maindloop main.o ./libclassloops.so -lm
+	gcc -Wall -g -o maindloop main.o ./libclassloops.so -lm
 
 maindrec: main.o
-	gcc -wall -g -o maindrec main.o ./libclassrec.so -lm
+	gcc -Wall -g -o maindrec main.o ./libclassrec.so -lm
 
 loop: advancedClassificationLoop.o basicClassification.o NumClass.h
 	ar -rcs libclassloops.a basicClassification.o advancedClassificationLoop.o
@@ -22,17 +22,16 @@ loopd: advancedClassificationLoop.o basicClassification.o NumClass.h
 	gcc -shared -o libclassloops.so advancedClassificationLoop.o basicClassification.o -lm
 
 main.o: main.c NumClass.h
-	gcc -wall -g -c main.c 
+	gcc -Wall -g -c main.c 
 
 basicClassification.o: basicClassification.c NumClass.h
-	gcc -wall -g -c basicClassification.c
+	gcc -Wall -g -c basicClassification.c
 
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	gcc -wall -g -c advancedClassificationLoop.c
+	gcc -Wall -g -c advancedClassificationLoop.c
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	gcc -wall -g -c advancedClassificationRecursion.c
-
+	gcc -Wall -g -c advancedClassificationRecursion.c
 
 .PHONY: clean all
 
