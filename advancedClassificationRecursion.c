@@ -20,22 +20,20 @@ int isPalindrome(int num){
    }
    return 0;
 }
-int isArmstrong(int num){
-    return cheackisArmstrong(num ,log10(num)+1);
-}
-int cheackisArmstrong(int num ,int numofdig){
-    int temp=pow(num%10,numofdig);
-    if (num-temp==0)
+
+int cheackisArmstrong(int num ,int savenum,int numofdig){
+    int temp=pow(savenum%10,numofdig);
+    if ((num-temp==0)&&(savenum/10==0))
     {
         return 1;
     }else if (num>0)
     {
-
+        num-=pow(savenum%10,numofdig);
+        return cheackisArmstrong(num,savenum/10,numofdig);
     }
     return 0;
 }
 
-int main(){
-    printf("%d\n",isArmstrong(407));
-    return 0;
+int isArmstrong(int num){
+    return cheackisArmstrong(num ,num,log10(num)+1);
 }
