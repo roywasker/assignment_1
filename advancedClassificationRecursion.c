@@ -22,18 +22,27 @@ int isPalindrome(int num){
 }
 
 int cheackisArmstrong(int num ,int savenum,int numofdig){
-    int temp=pow(savenum%10,numofdig);
-    if ((num-temp==0)&&(savenum/10==0))
+    int temp;
+    if (savenum>9)
+    {
+        temp=pow((savenum%10),numofdig);
+    }else{
+    temp=pow((savenum),numofdig);
+    }
+    if ((num-temp==0)&&((savenum/10)==0))
     {
         return 1;
-    }else if (num>0)
-    {
-        num-=pow(savenum%10,numofdig);
+    }else if ((num>0)&&(savenum>=10))
+    {   
+        num-=pow((savenum%10),numofdig);
         return cheackisArmstrong(num,savenum/10,numofdig);
     }
     return 0;
 }
 
 int isArmstrong(int num){
-    return cheackisArmstrong(num ,num,log10(num)+1);
+    return cheackisArmstrong(num ,num,(log10(num)+1));
+}
+int main(){
+    printf("%d",isArmstrong(11));
 }
