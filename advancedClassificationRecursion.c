@@ -43,6 +43,3 @@ int cheackisArmstrong(int num ,int savenum,int numofdig){
 int isArmstrong(int num){
     return cheackisArmstrong(num ,num,(log10(num)+1));
 }
-int main(){
-    printf("%d",isArmstrong(11));
-}
