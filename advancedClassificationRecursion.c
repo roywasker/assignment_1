@@ -14,7 +14,17 @@ int isPalindrome(int num){
     int savefirstdig=num/pow(10,numofdig);
     if (savefirstdig==num%10)
     {
+        int secdigfirst=(num/(int)(pow(10,numofdig-1))%10);
+        int secdiglast=(num%100)/10;
+        if ((secdiglast==0||secdigfirst==0)&&(secdiglast!=secdigfirst))
+        { 
+            return 0;
+        }
         num=num%(int)pow(10,numofdig);
+        if (secdigfirst==0&&secdiglast==0)
+        {
+            return isPalindrome(num/100);
+        }
         return isPalindrome(num/10);
     }
    }
