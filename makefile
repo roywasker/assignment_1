@@ -1,5 +1,5 @@
 
-all: loops loopd recursived recursives mains maindrec maindloop
+all: loops loopd recursived recursives mains maindloop maindrec
 
 loops: libclassloops.a
 
@@ -34,13 +34,13 @@ main.o: main.c NumClass.h
 	gcc -Wall -g -c main.c 
 
 basicClassification.o: basicClassification.c NumClass.h
-	gcc -Wall -g -c basicClassification.c 
+	gcc -Wall -g -c -fPIC basicClassification.c 
 
 advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
-	gcc -Wall -g -c advancedClassificationLoop.c 
+	gcc -Wall -g -c -fPIC advancedClassificationLoop.c 
 
 advancedClassificationRecursion.o: advancedClassificationRecursion.c NumClass.h
-	gcc -Wall -g -c advancedClassificationRecursion.c 
+	gcc -Wall -g -c -fPIC advancedClassificationRecursion.c 
 
 .PHONY: clean all
 
